@@ -23,6 +23,7 @@ run, based on **XResnet-34**, which I'm calling **mwalimu-128**, available [here
 
 ## Showcasing early generalization
 ![Early Generalization](images/early-generalization.png)
-During the transfer learning step of this challenge, early in training we observe that validation loss is lower than trainig loss, a sign of good generalization properties for this dataset.
+During the transfer learning step of this challenge, early in training we observe that validation loss is lower than trainig loss, a sign of good generalization properties for this dataset. While the phenomenon disappears, perhaps due
+to the model's parameter distribution changing drastically from that which it learned during the previous task.
 
 Acknowledgments: @keremturgutlu for https://github.com/keremturgutlu/self_supervised, this would have not been possible so quickly without his work.
