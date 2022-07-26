@@ -22,7 +22,7 @@ are kind of a bonus but it would better to ablate them. I'm also releasing one p
 run, based on **XResnet-34**, which I'm calling **mwalimu-128**, available [here on Google Drive](https://drive.google.com/drive/folders/1lV7Zl5XcI1dov6FkEgr6rmxES14Hc-xF). Another one is in progress, based on Res2Net50 which will be made available soon.
 
 ## Showcasing early generalization
-![Early Generalization](images/early-generalization.png)
+![Early Generalization](images/early-generalization-cherrypick.png)
 
 During the transfer learning step of this challenge, early in training we observe that validation loss is lower than trainig loss, a sign of good generalization properties for this dataset. While the phenomenon disappears, perhaps due
 to the model's parameter distribution changing drastically from that which it learned during the previous task.
