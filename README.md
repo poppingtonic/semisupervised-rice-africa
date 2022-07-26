@@ -1,4 +1,5 @@
 # Rice Disease Classification through Self-Supervised Pretraining
+*Brian Muhia, July 2022*
 
 In this repository, we train a self-supervised encoder on images from 
 [this Zindi challenge ](https://zindi.africa/competitions/microsoft-rice-disease-classification-challenge/), 
