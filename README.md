@@ -9,7 +9,7 @@ the set `S = ['brown', 'blast', 'healthy']`. We want to make this, and other fut
 dataset simpler by utilising **weight sharing**: representing both images of the same object with the same weights, 
 even if they're coming from two different cameras. After that, we can use those weights for the downstream task 
 of classifying diseases. We can achieve this through self-supervised learning. For this task, we leave the labels 
-alone and focus on training a model of the structure **{Image , Image}**. 
+alone and focus on training a model of the structure **{ImageTensor , ImageTensor}**. 
 
 In the standard self-supervised learning setup for computer vision, we take a single image from the training set, 
 make a copy, suitably augment that copy, then train a neural network to **minimize the distance between copies**. 
@@ -21,10 +21,20 @@ another augmentation of the RGB image. The other augmentations from the [SWAV pa
 are kind of a bonus but it would better to ablate them. I'm also releasing one pretrained encoder from the best 
 run, based on **XResnet-34**, which I'm calling **mwalimu-128**, available [here on Google Drive](https://drive.google.com/drive/folders/1lV7Zl5XcI1dov6FkEgr6rmxES14Hc-xF). Another one is in progress, based on Res2Net50 which will be made available soon.
 
+## mwalimu-128 details
+- architecture: xresnet34
+- image size: 128px
+- bs: 32
+- training time: Approx. 2.5 hrs
+- gpu: Nvidia GeForce RTX 3070
+
+### Training loss curve
+![loss curve](images/mwalimu-128.png)
+About 60% of the way into the training run `mwalimu-129=8`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better.
+
 ## Showcasing early generalization
 ![Early Generalization](images/early-generalization-cherrypick.png)
 
-During the transfer learning step of this challenge, early in training we observe that validation loss is lower than trainig loss, a sign of good generalization properties for this dataset. While the phenomenon disappears, perhaps due
-to the model's parameter distribution changing drastically from that which it learned during the previous task.
+During the transfer learning step of this challenge, early in training we observe that validation loss is lower than training loss, a sign of good generalization properties for this dataset. In the current set of experiments, the phenomenon disappears in later steps, perhaps due to the model's parameter distribution changing drastically from that which it learned during the previous task.
 
 Acknowledgments: @keremturgutlu for https://github.com/keremturgutlu/self_supervised, this would have not been possible so quickly without his work.
