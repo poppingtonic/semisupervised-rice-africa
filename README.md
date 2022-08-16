@@ -26,6 +26,11 @@ mamba install -c fastai fastai
 pip install jupyter jupyterlab self-supervised wandb
 
 
+### Read the Notebooks for more
+Pretraining: self-supervised-learning-swav-eda.ipynb
+Classification: classifier.ipynb
+
+
 ## mwalimu-128 details
 - architecture: xresnet34
 - image size: 128px
