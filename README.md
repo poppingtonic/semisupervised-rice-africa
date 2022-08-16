@@ -17,9 +17,19 @@ When such a model is well trained to convergence, we have a **task-agnostic enco
 used for further downstream tasks by transfer learning. Since we have two cameras pointing at plants, we get two 
 images per sample in the training set. We can therefore construct any self-supervised learning task by assuming 
 the image's copy is given, and that the difference in appearance coming from the NIR channel might as well be 
-another augmentation of the RGB image. The other augmentations from the [SWAV paper/implementation](https://arxiv.org/abs/2006.09882) 
-are kind of a bonus but it would better to ablate them. I'm also releasing one pretrained encoder from the best 
-run, based on **XResnet-34**, which I'm calling **mwalimu-128**, available [here on Google Drive](https://drive.google.com/drive/folders/1lV7Zl5XcI1dov6FkEgr6rmxES14Hc-xF). Another one is in progress, based on Res2Net50 which will be made available soon.
+another augmentation of the RGB image. The other augmentations from the [SWAV paper/implementation](https://arxiv.org/abs/2006.09882) are kind of a bonus but it would better to ablate them. We're also releasing one pretrained encoder 
+from the best run, based on **XResnet-34**, which we're calling **mwalimu-128**, available [here on Google Drive](https://drive.google.com/drive/folders/1lV7Zl5XcI1dov6FkEgr6rmxES14Hc-xF). Another one is in progress, based on Res2Net50 
+which will be made available soon.
+
+## installation
+mamba install -c fastai fastai
+pip install jupyter jupyterlab self-supervised wandb
+
+
+### Read the Notebooks for more
+Pretraining: self-supervised-learning-swav-eda.ipynb
+Classification: classifier.ipynb
+
 
 ## mwalimu-128 details
 - architecture: xresnet34
@@ -30,11 +40,14 @@ run, based on **XResnet-34**, which I'm calling **mwalimu-128**, available [here
 
 ### Training loss curve
 ![loss curve](images/mwalimu-128.png)
-About 60% of the way into the training run `mwalimu-129=8`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better.
+About 60% of the way into the training run `mwalimu-128`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better.
 
 ## Showcasing early generalization
 ![Early Generalization](images/early-generalization-cherrypick.png)
 
-During the transfer learning step of this challenge, early in training we observe that validation loss is lower than training loss, a sign of good generalization properties for this dataset. In the current set of experiments, the phenomenon disappears in later steps, perhaps due to the model's parameter distribution changing drastically from that which it learned during the previous task.
+During the transfer learning step of this challenge, early in training we observe that validation loss is lower than
+training loss, a sign of good generalization properties for this dataset. In the current set of experiments, the
+phenomenon disappears in later steps, and this observation survives for even more of the training time of a model
+if the batch size is higher.
 
 Acknowledgments: @keremturgutlu for https://github.com/keremturgutlu/self_supervised, this would have not been possible so quickly without his work.
