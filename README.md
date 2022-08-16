@@ -22,21 +22,25 @@ from the best run, based on **XResnet-34**, which we're calling **mwalimu-128**,
 which will be made available soon.
 
 ## installation
+```
 mamba install -c fastai fastai
 pip install jupyter jupyterlab self-supervised wandb
-
+```
 
 ### Read the Notebooks for more
-Pretraining: self-supervised-learning-swav-eda.ipynb
-Classification: classifier.ipynb
+
++ Pretraining: self-supervised-learning-swav-eda.ipynb
++ Classification: classifier.ipynb
 
 
 ## mwalimu-128 details
-- architecture: xresnet34
+- architecture: xresnet34,res2next50
 - image size: 128px
 - bs: 32
-- training time: Approx. 2.5 hrs
-- gpu: Nvidia GeForce RTX 3070
+- training time: Approx. 2.5 hrs and 4 hours respectively. 
+  res2next50 trained faster, benefiting from a much higher batch size
+
+- gpu: Nvidia GeForce RTX 3070 8GB | Tesla V100 16GB
 
 ### Training loss curve
 ![loss curve](images/mwalimu-128.png)
