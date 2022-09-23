@@ -40,7 +40,7 @@ Classification: classifier.ipynb
 
 ### Training loss curve
 ![loss curve](images/mwalimu-128.png)
-About 60% of the way into the training run `mwalimu-128`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better.
+About 60% of the way into the training run `mwalimu-128`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better. More results on [wandb](https://wandb.ai/nlug/self-supervised-rice-disease-classification)
 
 ## Showcasing early generalization
 ![Early Generalization](images/early-generalization-cherrypick.png)
