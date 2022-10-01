@@ -42,6 +42,9 @@ Classification: classifier.ipynb
 ![loss curve](images/mwalimu-128.png)
 About 60% of the way into the training run `mwalimu-128`, the loss dropped dramatically, meaning the model escaped a saddle point that enabled it to solve the task significantly better. More results on [wandb](https://wandb.ai/nlug/self-supervised-rice-disease-classification)
 
+## New! Interpretability Research
+I have started a new project to interpret the representations learned by SwAV on this dataset. [Watch this space](https://www.notion.so/Visualizing-Learned-Representations-of-Rice-Disease-43178513deaa4f04b03c246e57ac16c7), more coming soon.
+
 ## Showcasing early generalization
 ![Early Generalization](images/early-generalization-cherrypick.png)
 
