@@ -44,6 +44,8 @@ pip install jupyter jupyterlab self-supervised wandb
 
 
 ## New! Interpretability Research
+Visualising Multi-Sensor Predictions from a Rice Disease Classifier https://www.qeios.com/read/U1Y01E
+
 I have started a new project to interpret the representations learned by SwAV on this dataset. [Watch this space](https://www.notion.so/Visualizing-Learned-Representations-of-Rice-Disease-43178513deaa4f04b03c246e57ac16c7), more coming soon.
 
 ### Training loss curve
